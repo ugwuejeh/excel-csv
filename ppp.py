@@ -1,11 +1,9 @@
-
-
-
 # we start by Creating and saving an Excel file.
 # imports the `Workbook`class from the `openpyxl` module
 
 
 import openpyxl
+import csv
 
 # we Create a new workbook object using the "workbook()" constructor
 workbook = openpyxl.Workbook()
@@ -18,18 +16,16 @@ worksheet['A1'] = 'hello'
 worksheet['B1'] = 'world'
 
 # Save the workbook
-workbook.save('exam.xlsx')
+workbook.save('cohort3.xlsx')
 
 
-# from line 8 to 21 we create a new empty Excel workbook called "exam.xlsx"
+# from line 5 to 18 we create a new empty Excel workbook called "cohort3.xlsx"
 # which contains a singleworksheet with the text "hello" in cell A1
 #  and "world" in cell B1.
 
-# to read we 
-import openpyxl
-
+# to read we
 # Load the workbook
-workbook = openpyxl.load_workbook('exam.xlsx')
+workbook = openpyxl.load_workbook('cohort3.xlsx')
 
 # Select the active worksheet
 worksheet = workbook.active
@@ -42,16 +38,14 @@ cell_value2 = worksheet['B1'].value
 print(cell_value1, cell_value2)
 
 
-# This will load the "exam.xlsx" file we created earlier and read
+# This will load the "cohort3.xlsx" file we created earlier and read
 #   the values from cells A1 and B1. The values are then printed to the console.
 
 
 
-#  to write 
-import openpyxl
-
+#  to write we
 # Load the workbook
-workbook = openpyxl.load_workbook('exam.xlsx')
+workbook = openpyxl.load_workbook('cohort3.xlsx')
 
 # Select the active worksheet
 worksheet = workbook.active
@@ -62,16 +56,14 @@ worksheet['D1'] = 'are'
 worksheet['E1'] = 'you?'
 
 # Save the workbook
-workbook.save('exam.xlsx')
+workbook.save('cohort3.xlsx')
 
 
-# This will load the "example.xlsx" file we created earlier and add new data to cells C1, D1, and E1. The modified workbook is then saved.
+# we load the "cohort3.xlsx" file we created earlier 
+# and add new data to cells C1, D1, and E1. 
+# The modified workbook is then saved.
 
-#  Converting a text file to an Excel file. first we import csv
-
-import csv
-import openpyxl
-
+#  Converting a text file to an Excel file. first we import csv which we did from the begining
 # Load the text file
 with open('file.txt', 'r') as infile:
     reader = csv.reader(infile, delimiter='\t')
@@ -88,7 +80,7 @@ for row in data:
     worksheet.append(row)
 
 # Save the workbook
-workbook.save('outputs1.xlsx')
+workbook.save('cohort.xlsx')
 
 
 # This will load the text file "file.txt", which is assumed to be a tab-delimited
